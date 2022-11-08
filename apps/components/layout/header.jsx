@@ -1,8 +1,10 @@
 import ActiveLink from '@/components/shared/active-link';
+import { siteTitle } from '@/config/setting';
 
 function Header() {
   return (
     <header>
+      <div>{siteTitle()}</div>
       <ul>
         <li>
           <ActiveLink href="/" activeClassName="active">

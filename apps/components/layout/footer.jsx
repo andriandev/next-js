@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { siteTitle } from '@/config/setting';
 
 function Footer() {
   return (
@@ -6,7 +7,7 @@ function Footer() {
       <p>
         Copyright ©{new Date().getFullYear() + ' '}
         <Link href="/">
-          <a>Next App</a>
+          <a>{siteTitle()}</a>
         </Link>
       </p>
     </footer>
