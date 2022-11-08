@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 function Footer() {
   return (
-    <footer className="bg-light">
+    <footer>
       <p>
         Copyright ©{new Date().getFullYear() + ' '}
         <Link href="/">
