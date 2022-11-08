@@ -1,16 +1,17 @@
 {
-  "name": "next-app-manual",
-  "version": "0.2.0",
+  "name": "next-app",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "export": "next export"
   },
   "dependencies": {
-    "next": "^12.2.5",
+    "next": "^12.3.2",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "sharp": "^0.31.2"
   }
 }
