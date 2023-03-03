@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import { useRouter } from 'next/router';
 import {
   siteBaseUrl,
   siteFaviconUrl,
@@ -9,38 +8,24 @@ import {
 } from '@/config/setting';
 
 function MetaHead(props) {
-  // Get canonical url
-  const { asPath } = useRouter();
-
-  // Delete params '?' and '#'
-  let urlPath = '';
-  if (asPath.includes('?')) {
-    urlPath = asPath.split('?')[0];
-  } else if (asPath.includes('#')) {
-    urlPath = asPath.split('#')[0];
-  } else {
-    urlPath = asPath;
-  }
+  // Props variable
+  const { title, description, index, canonical } = props;
 
   // Define variabel
   const baseUrl = siteBaseUrl();
   const faviconUrl = siteFaviconUrl();
   const faviconType = faviconUrl.split('.');
 
-  const title =
-    urlPath == '/' ? props.title : `${props.title} - ${siteTitle()}`;
-  const index = props.index == 'noindex' ? 'noindex, nofollow' : props.index;
-  const canonical = props.canonical
-    ? baseUrl + '/' + props.canonical
-    : baseUrl + urlPath;
-
   return (
     <Head>
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <title>{title}</title>
-      <meta name="description" content={props.description} />
-      <meta name="robots" content={index} />
-      <link rel="canonical" href={canonical} />
+      <meta name="description" content={description} />
+      <meta
+        name="robots"
+        content={index == 'noindex' ? 'noindex, nofollow' : index}
+      />
+      <link rel="canonical" href={baseUrl + canonical} />
       <link
         rel="icon"
         type={`image/${faviconType[faviconType.length - 1]}`}
@@ -54,6 +39,7 @@ MetaHead.defaultProps = {
   title: siteTitle(),
   description: siteDescription(),
   index: siteIndex(),
+  canonical: '/',
 };
 
 export default MetaHead;

@@ -3,7 +3,7 @@ import MetaHead from '@/components/shared/meta-head';
 function AboutPage() {
   return (
     <>
-      <MetaHead title="About" description="About Page" canonical="about" />
+      <MetaHead title="About" description="About Page" canonical="/about" />
       <h1>About</h1>
       <p>
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias
