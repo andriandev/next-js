@@ -2,13 +2,13 @@ import Link from 'next/link';
 import { siteTitle } from '@/config/setting';
 
 function Footer() {
+  const currYear = new Date().getFullYear();
+
   return (
     <footer>
       <p>
-        Copyright ©{new Date().getFullYear() + ' '}
-        <Link href="/">
-          <a>{siteTitle()}</a>
-        </Link>
+        {`Copyright © ${currYear} `}
+        <Link href="/">{siteTitle()}</Link>
       </p>
     </footer>
   );

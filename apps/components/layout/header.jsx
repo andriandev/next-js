@@ -7,13 +7,13 @@ function Header() {
       <div>{siteTitle()}</div>
       <ul>
         <li>
-          <ActiveLink href="/" activeClassName="active">
-            <a>Home</a>
+          <ActiveLink href="/" className="" activeClassName="active">
+            Home
           </ActiveLink>
         </li>
         <li>
-          <ActiveLink href="/about" activeClassName="active">
-            <a>About</a>
+          <ActiveLink href="/about" className="" activeClassName="active">
+            About
           </ActiveLink>
         </li>
       </ul>
